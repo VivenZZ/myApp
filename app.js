@@ -42,7 +42,8 @@ app.use('/share', shareRouter);
 app.use('/time', timeRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use('*', function(req, res, next) {
+  res.render('error',{message: '错误地址'});
   next(createError(404));
 });
 
