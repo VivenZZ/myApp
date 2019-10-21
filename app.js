@@ -8,6 +8,13 @@ var hbs = require('hbs');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var aboutRouter = require('./routes/about');
+var gbookRouter = require('./routes/gbook');
+var infoRouter = require('./routes/info');
+var lifeRouter = require('./routes/life');
+var listRouter = require('./routes/list');
+var shareRouter = require('./routes/share');
+var timeRouter = require('./routes/time');
 
 var app = express();
 
@@ -26,6 +33,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/about', aboutRouter);
+app.use('/gbook', gbookRouter);
+app.use('/info', infoRouter);
+app.use('/life', lifeRouter);
+app.use('/list', listRouter);
+app.use('/share', shareRouter);
+app.use('/time', timeRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
